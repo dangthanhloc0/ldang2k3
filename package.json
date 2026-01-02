@@ -4,7 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build && npm run copy-dist",
+    "copy-dist": "powershell -Command \"Copy-Item -Path dist/keycloak-demo/browser/* -Destination dist/keycloak-demo -Force -Recurse\"",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
